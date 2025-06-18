@@ -8,7 +8,6 @@ import {
 } from "./input";
 
 import { isDOMElement } from "./helpers";
-import invariant from 'invariant';
 import { MaskState } from './types';
 
 export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
@@ -16,8 +15,6 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
     let input: HTMLInputElement = inputRef.current;
     const isDOMNode = typeof window !== "undefined" && isDOMElement(input);
 
-    // workaround for react-test-renderer
-    // https://github.com/sanniassin/react-input-mask/issues/147
     if (!input || !isDOMNode) {
       return null;
     }
@@ -25,7 +22,9 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
     if (input.nodeName !== "INPUT") {
       const innerInput = input.querySelector<HTMLInputElement>("input");
       if (!innerInput) {
-        invariant(typeof window !== "undefined", "react-input-mask: inputComponent must be rendered in DOM environment");
+        if (typeof window !== "undefined") {
+          throw new Error("react-input-mask-ts: inputComponent must be rendered in DOM environment");
+        }
         return;
       }
       input = innerInput
@@ -33,7 +32,7 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
 
     if (!input) {
       throw new Error(
-        "react-input-mask: inputComponent doesn't contain input node"
+        "react-input-mask-ts: inputComponent doesn't contain input node"
       );
     }
 
