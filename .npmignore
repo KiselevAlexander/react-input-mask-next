@@ -1,0 +1,8 @@
+.idea
+tests
+node_modules
+dev
+src
+index.html
+vite.config.ts
+pnpm-lock.yaml

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "lib": [
+      "ESNext",
+      "ESNext.Array",
+      "ES2023",
+      "dom"
+    ],
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests/**/*.test.ts",
+    "tests/**/*.test.tsx"
+  ]
+}
