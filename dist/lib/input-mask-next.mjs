@@ -31,7 +31,8 @@ function validateMaskPlaceholder(props) {
         "mask: ".concat(mask, "\n") +
         "maskPlaceholder: ".concat(maskPlaceholder));
 }
-function validateChildren(props, inputElement) {
+function validateChildren(props, children) {
+    var inputElement = React.Children.only(children);
     var conflictProps = CONTROLLED_PROPS.filter(function (propId) {
         return inputElement.props[propId] != null &&
             propId in props &&

@@ -1,11 +1,11 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { HTMLProps, Ref, ReactElement } from 'react';
+import { HTMLProps, Ref, ReactNode } from 'react';
 
 type InputMaskProps = HTMLProps<HTMLInputElement> & {
     ref?: Ref<HTMLInputElement>;
     alwaysShowMask?: boolean;
     maskPlaceholder?: string | null;
-    children?: ReactElement;
+    children?: ReactNode;
     mask: string | (string | RegExp)[];
     beforeMaskedStateChange?(props: {
         currentState?: MaskState;

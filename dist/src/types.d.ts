@@ -1,9 +1,9 @@
-import { HTMLProps, ReactElement, Ref } from 'react';
+import { HTMLProps, ReactNode, Ref } from 'react';
 export type InputMaskProps = HTMLProps<HTMLInputElement> & {
     ref?: Ref<HTMLInputElement>;
     alwaysShowMask?: boolean;
     maskPlaceholder?: string | null;
-    children?: ReactElement;
+    children?: ReactNode;
     mask: string | (string | RegExp)[];
     beforeMaskedStateChange?(props: {
         currentState?: MaskState;

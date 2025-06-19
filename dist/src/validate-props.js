@@ -1,6 +1,7 @@
 import invariant from "invariant";
 import warning from "warning";
 import { CONTROLLED_PROPS } from "./constants";
+import * as React from 'react';
 export function validateMaxLength(props) {
     warning(!props.maxLength || !props.mask, "react-input-mask-ts: maxLength property shouldn't be passed to the masked input. It breaks masking and unnecessary because length is limited by the mask length.");
 }
@@ -13,7 +14,8 @@ export function validateMaskPlaceholder(props) {
         "mask: ".concat(mask, "\n") +
         "maskPlaceholder: ".concat(maskPlaceholder));
 }
-export function validateChildren(props, inputElement) {
+export function validateChildren(props, children) {
+    var inputElement = React.Children.only(children);
     var conflictProps = CONTROLLED_PROPS.filter(function (propId) {
         return inputElement.props[propId] != null &&
             propId in props &&

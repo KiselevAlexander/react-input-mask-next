@@ -21,7 +21,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { useImperativeHandle, useLayoutEffect, useRef } from 'react';
+import { useImperativeHandle, useLayoutEffect, useRef, } from 'react';
 import { validateChildren, validateMaskPlaceholder, validateMaxLength } from './validate-props';
 import MaskUtils from './mask';
 import { useInputElement, useInputState, usePrevious } from './hooks';
