@@ -2,7 +2,8 @@ import invariant from "invariant";
 import warning from "warning";
 import { CONTROLLED_PROPS } from "./constants";
 import { InputMaskProps } from './types';
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
+import * as React from 'react';
 
 export function validateMaxLength(props: InputMaskProps) {
     warning(
@@ -25,9 +26,10 @@ export function validateMaskPlaceholder(props: InputMaskProps) {
     );
 }
 
-export function validateChildren(props: InputMaskProps, inputElement: ReactElement<any>) {
+export function validateChildren(props: InputMaskProps, children: ReactNode) {
+    const inputElement = React.Children.only(children) as ReactElement<HTMLInputElement>;
     const conflictProps = CONTROLLED_PROPS.filter(
-        (propId: string) =>
+        (propId: keyof HTMLInputElement) =>
             inputElement.props[propId] != null &&
             propId in props &&
             inputElement.props[propId] !== props[propId as keyof InputMaskProps],

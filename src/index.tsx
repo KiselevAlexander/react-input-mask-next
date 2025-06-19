@@ -1,5 +1,14 @@
 import { InputMaskProps, MaskState } from './types';
-import { ChangeEvent, MouseEvent, RefObject, FocusEvent, useImperativeHandle, useLayoutEffect, useRef } from 'react';
+import {
+    ChangeEvent,
+    MouseEvent,
+    RefObject,
+    FocusEvent,
+    useImperativeHandle,
+    useLayoutEffect,
+    useRef,
+    ReactElement,
+} from 'react';
 import { validateChildren, validateMaskPlaceholder, validateMaxLength } from './validate-props';
 import MaskUtils from './mask';
 import { useInputElement, useInputState, usePrevious } from './hooks';
@@ -282,7 +291,7 @@ export function InputMask(props: InputMaskProps) {
     if (children) {
         validateChildren(props, children);
         
-        const onlyChild = React.Children.only(children);
+        const onlyChild = React.Children.only(children) as ReactElement<HTMLInputElement>;
         
         return React.cloneElement(onlyChild, {
             ...inputProps,

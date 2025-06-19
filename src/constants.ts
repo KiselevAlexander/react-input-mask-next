@@ -1,4 +1,4 @@
-export const CONTROLLED_PROPS = [
+export const CONTROLLED_PROPS: any[]= [
   "disabled",
   "onBlur",
   "onChange",

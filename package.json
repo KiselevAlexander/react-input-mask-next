@@ -1,6 +1,6 @@
 {
   "name": "react-input-mask-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Masked input component for React",
   "type": "module",
   "main": "dist/lib/input-mask-next.js",
