@@ -1,13 +1,13 @@
 # React input mask TS
 
 ```sh
-npm install react-input-mask-next
+npm install react-input-mask-ts
 ```
 ```sh
-yarn add react-input-mask-next
+yarn add react-input-mask-ts
 ```
 ```sh
-pnpm add react-input-mask-next
+pnpm add react-input-mask-ts
 ```
 
 
@@ -15,7 +15,7 @@ pnpm add react-input-mask-next
 
 ```jsx
 import React from 'react'
-import InputMask from '@kiselev/react-input-mask'
+import InputMask from 'react-input-mask-ts'
 
 function DateInput(props) {
   return (
@@ -134,7 +134,7 @@ To use another component instead of regular `<input />` provide it as children. 
 
 ```jsx
 import React from 'react';
-import InputMask from '@mona-health/react-input-mask';
+import InputMask from 'react-input-mask-ts';
 import MaterialInput from '@material-ui/core/Input';
 
 // Will work fine

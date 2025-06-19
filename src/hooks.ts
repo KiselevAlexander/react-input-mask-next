@@ -15,8 +15,6 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
     let input: HTMLInputElement = inputRef.current;
     const isDOMNode = typeof window !== "undefined" && isDOMElement(input);
 
-    // workaround for react-test-renderer
-    // https://github.com/sanniassin/react-input-mask/issues/147
     if (!input || !isDOMNode) {
       return null;
     }
@@ -25,7 +23,7 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
       const innerInput = input.querySelector<HTMLInputElement>("input");
       if (!innerInput) {
         if (typeof window !== "undefined") {
-          throw new Error("react-input-mask: inputComponent must be rendered in DOM environment");
+          throw new Error("react-input-mask-ts: inputComponent must be rendered in DOM environment");
         }
         return;
       }
@@ -34,7 +32,7 @@ export function useInputElement(inputRef: RefObject<HTMLInputElement>) {
 
     if (!input) {
       throw new Error(
-        "react-input-mask: inputComponent doesn't contain input node"
+        "react-input-mask-ts: inputComponent doesn't contain input node"
       );
     }
 

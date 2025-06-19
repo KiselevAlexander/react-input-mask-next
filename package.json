@@ -1,5 +1,5 @@
 {
-  "name": "react-input-mask-next",
+  "name": "react-input-mask-ts",
   "version": "0.1.0",
   "description": "Masked input component for React",
   "type": "module",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KiselevAlexander/react-input-mask-next.git"
+    "url": "https://github.com/KiselevAlexander/react-input-mask-ts.git"
   },
   "dependencies": {
     "typescript": "^5.8.3"
