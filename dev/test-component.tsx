@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import InputMask from '../src';
 import './styles.css';
 
@@ -13,7 +13,7 @@ export function TestComponent(): ReactNode {
             <InputMask mask={ mask } defaultValue='А 784 КТ 77'/>
             <InputMask mask='99/99/9999' maskPlaceholder='dd/mm/yyyy' defaultValue='12'/>
             <InputMask mask="+4\9 99 9\99 99" maskPlaceholder={null}/>
-            <InputMask mask="+7 (999) 999 99 99"  value="+7 (___) ___ _1 __" autoFocus/>
+            <InputMask mask="+7 (999) 999 99 99" defaultValue="+7 (___) ___ _1 _1"/>
         </div>
     )
 }

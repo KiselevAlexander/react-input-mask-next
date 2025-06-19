@@ -1,3 +1,5 @@
+![example workflow](https://github.com/KiselevAlexander/react-input-mask-ts/actions/workflows/npm-publish-github-packages.yml/badge.svg)
+
 # React input mask TS
 
 ```sh

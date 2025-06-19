@@ -2,26 +2,25 @@ import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { defer, cancelDefer } from "./defer";
 import { setInputSelection, getInputSelection, isInputFocused } from "./input";
 import { isDOMElement } from "./helpers";
-import invariant from 'invariant';
 export function useInputElement(inputRef) {
     return useCallback(function () {
         var input = inputRef.current;
         var isDOMNode = typeof window !== "undefined" && isDOMElement(input);
-        // workaround for react-test-renderer
-        // https://github.com/sanniassin/react-input-mask/issues/147
         if (!input || !isDOMNode) {
             return null;
         }
         if (input.nodeName !== "INPUT") {
             var innerInput = input.querySelector("input");
             if (!innerInput) {
-                invariant(typeof window !== "undefined", "react-input-mask: inputComponent must be rendered in DOM environment");
+                if (typeof window !== "undefined") {
+                    throw new Error("react-input-mask-ts: inputComponent must be rendered in DOM environment");
+                }
                 return;
             }
             input = innerInput;
         }
         if (!input) {
-            throw new Error("react-input-mask: inputComponent doesn't contain input node");
+            throw new Error("react-input-mask-ts: inputComponent doesn't contain input node");
         }
         return input;
     }, [inputRef]);

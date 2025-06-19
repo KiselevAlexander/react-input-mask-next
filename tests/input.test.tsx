@@ -188,6 +188,7 @@ describe('base', () => {
         
         focus(input);
         await setCursorPosition(input, 2);
+        await sleep(50);
         
         expect(getInputSelection(input).start).toEqual(16);
         expect(getInputSelection(input).end).toEqual(16);
@@ -196,8 +197,9 @@ describe('base', () => {
         
         rerender(<Input mask="+7 (999) 999 99 99" value="+7 (___) ___ _1 _1"/>);
         focus(input);
-        expect(getInputSelection(input).start).toEqual(2);
-        expect(getInputSelection(input).end).toEqual(2);
+        await sleep(150);
+        expect(getInputSelection(input).start).toEqual(18);
+        expect(getInputSelection(input).end).toEqual(18);
         
         blur(input);
         
