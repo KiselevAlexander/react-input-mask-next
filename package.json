@@ -1,11 +1,10 @@
 {
   "name": "react-input-mask-ts",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Masked input component for React",
   "type": "module",
-  "main": "dist/lib/input-mask-next.js",
-  "module": "dist/lib/input-mask-next.mjs",
-  "types": "dist/lib/input-mask-next.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "scripts": {
     "_clear": "rm -rf dist",
     "_tsc": "tsc --build tsconfig.build.json",
@@ -16,15 +15,15 @@
     "publish": "pnpm publish --provenance --access public"
   },
   "files": [
-    "dist/lib/",
-    "dist/src/",
-    "readme.md"
+    "dist",
+    "readme.md",
+    "LICENSE"
   ],
   "exports": {
     ".": {
-      "require": "./dist/lib/input-mask-next.js",
-      "import": "./dist/lib/input-mask-next.mjs",
-      "default": "./dist/lib/input-mask-next.mjs"
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
     },
     "./package.json": "./package.json"
   },

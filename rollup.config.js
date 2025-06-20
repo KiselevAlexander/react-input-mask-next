@@ -5,7 +5,7 @@ const config = [
     {
         input: 'dist/src/index.js',
         output: {
-            file: 'dist/lib/input-mask-next.js',
+            file: 'dist/cjs/index.js',
             format: 'cjs',
             sourcemap: true,
 
@@ -16,7 +16,7 @@ const config = [
     {
         input: 'dist/src/index.js',
         output: {
-            file: 'dist/lib/input-mask-next.mjs',
+            file: 'dist/esm/index.js',
             format: 'es',
             sourcemap: true,
 
@@ -27,7 +27,15 @@ const config = [
     {
         input: 'dist/src/index.d.ts',
         output: {
-            file: 'dist/lib/input-mask-next.d.ts',
+            file: 'dist/esm/index.d.ts',
+            format: 'es'
+        },
+        plugins: [dts()]
+    },
+    {
+        input: 'dist/src/index.d.ts',
+        output: {
+            file: 'dist/cjs/index.d.ts',
             format: 'es'
         },
         plugins: [dts()]
