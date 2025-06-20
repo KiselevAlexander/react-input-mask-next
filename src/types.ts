@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode, Ref } from 'react';
+import type { HTMLProps, ReactNode, Ref } from 'react';
 
 export type InputMaskProps = HTMLProps<HTMLInputElement> & {
     ref?: Ref<HTMLInputElement>;

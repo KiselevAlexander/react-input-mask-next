@@ -12,7 +12,8 @@
     "build": "npm-run-all _clear _tsc _make-bundle",
     "test": "jest",
     "dev": "vite",
-    "publish": "pnpm publish --provenance --access public"
+    "publish": "pnpm publish --access public",
+    "publish_ci": "pnpm publish --provenance --access public"
   },
   "files": [
     "dist",
